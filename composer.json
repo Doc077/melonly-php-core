@@ -1,0 +1,37 @@
+{
+  "name": "melonly/core",
+  "type": "package",
+  "description": "Melonly PHP Framework",
+  "keywords": ["melonly", "mvc", "framework"],
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Dominik Rajkowski",
+          "email": "dom.rajkowski@gmail.com"
+      }
+  ],
+  "require": {
+      "php": "^8.1",
+      "intervention/image": "^2.7",
+      "nesbot/carbon": "^2.57",
+      "ramsey/uuid": "^4.3",
+      "twig/twig": "^3.3",
+      "vlucas/phpdotenv": "^5.4"
+  },
+  "require-dev": {
+      "nunomaduro/termwind": "^1.7"
+  },
+  "config": {
+      "preferred-install": "dist",
+      "sort-packages": true
+  },
+  "autoload": {
+      "psr-4": {
+          "Melonly\\": "src/"
+      },
+      "files": [
+          "src/Support/constants.php",
+          "src/Support/helpers.php"
+      ]
+  }
+}
