@@ -14,12 +14,10 @@
       "php": "^8.1",
       "intervention/image": "^2.7",
       "nesbot/carbon": "^2.57",
+      "nunomaduro/termwind": "^1.7",
       "ramsey/uuid": "^4.3",
       "twig/twig": "^3.3",
       "vlucas/phpdotenv": "^5.4"
-  },
-  "require-dev": {
-      "nunomaduro/termwind": "^1.7"
   },
   "config": {
       "preferred-install": "dist",
