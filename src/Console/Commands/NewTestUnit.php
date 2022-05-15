@@ -9,7 +9,7 @@ return new class extends Command {
     }
 
     public function handle(): void {
-        $fileName = __DIR__ . '/../../../tests/Unit/' . $this->arguments[2] . '.php';
+        $fileName = __DIR__ . '/../../../../../../tests/Unit/' . $this->arguments[2] . '.php';
 
         if (File::exists($fileName)) {
             $this->errorLine("Unit test '{$this->arguments[2]}' already exists");

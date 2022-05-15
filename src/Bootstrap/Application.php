@@ -32,7 +32,7 @@ class Application
             ClassRegistrar::registerControllers();
 
             foreach (config('routing.files') as $file) {
-                require_once __DIR__ . '/../../routing/' . $file . '.php';
+                require_once __DIR__ . '/../../../routing/' . $file . '.php';
             }
 
             self::$performance = $timer->stop();
@@ -82,7 +82,7 @@ class Application
     {
         $this->registerHandlers();
 
-        Dotenv::createImmutable(__DIR__ . '/../..')->load();
+        Dotenv::createImmutable(__DIR__ . '/../../../../..')->load();
 
         Session::start();
         Container::initialize();

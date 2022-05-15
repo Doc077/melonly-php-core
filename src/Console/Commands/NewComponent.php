@@ -10,7 +10,7 @@ return new class extends Command {
     }
 
     public function handle(): void {
-        $fileName = __DIR__ . '/../../../frontend/views/components/' . $this->arguments[2] . '.html';
+        $fileName = __DIR__ . '/../../../../../../frontend/views/components/' . $this->arguments[2] . '.html';
 
         if (File::exists($fileName)) {
             $this->errorLine("Component '{$this->arguments[2]}' already exists");

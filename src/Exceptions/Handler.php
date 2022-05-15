@@ -85,7 +85,7 @@ class Handler
 
     public static function clearTempFiles(): void
     {
-        foreach (glob(__DIR__ . '/../../storage/temp/*.php', GLOB_BRACE) as $file) {
+        foreach (glob(__DIR__ . '/../../../../../storage/temp/*.php', GLOB_BRACE) as $file) {
             if (is_file($file)) {
                 File::delete($file);
             }

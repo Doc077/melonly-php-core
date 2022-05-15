@@ -50,7 +50,7 @@ class TerminalApplication
          */
         if (
             File::exists($file = __DIR__ . '/Commands/' . Str::pascalCase(Str::replace(':', '_', $this->arguments[1])) . '.php') ||
-            File::exists($file = __DIR__ . '/../../src/Commands/' . Str::pascalCase(Str::replace(':', '_', $this->arguments[1])) . '.php')
+            File::exists($file = __DIR__ . '/../../../../../src/Commands/' . Str::pascalCase(Str::replace(':', '_', $this->arguments[1])) . '.php')
         ) {
             $command = require_once $file;
 

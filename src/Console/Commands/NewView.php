@@ -11,7 +11,7 @@ return new class extends Command {
     }
 
     public function handle(): void {
-        $fileName = __DIR__ . '/../../../frontend/views/' . $this->arguments[2] . match (config('view.engine')) {
+        $fileName = __DIR__ . '/../../../../../../frontend/views/' . $this->arguments[2] . match (config('view.engine')) {
             Engine::Twig => '.html.twig',
             default => '.html',
         };

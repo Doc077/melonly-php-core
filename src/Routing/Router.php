@@ -250,7 +250,7 @@ class Router implements RouterInterface
         /**
          * Abort with 404 status if file not found.
          */
-        if (!File::exists(__DIR__ . '/../../' . config('app.public') . '/' . $uri)) {
+        if (!File::exists(__DIR__ . '/../../../../../' . config('app.public') . '/' . $uri)) {
             Container::get(Response::class)->abort(404);
 
             return;
@@ -274,7 +274,7 @@ class Router implements RouterInterface
 
         header('Content-Type: ' . $mime);
 
-        print(readfile(__DIR__ . '/../../' . config('app.public') . '/' . $uri));
+        print(readfile(__DIR__ . '/../../../../../' . config('app.public') . '/' . $uri));
     }
 
     protected function handleMiddleware(string $pattern): void

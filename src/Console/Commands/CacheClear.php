@@ -9,7 +9,7 @@ return new class extends Command {
     }
 
     public function handle(): void {
-        foreach (glob(__DIR__ . '/../../../storage/cache/*.php', GLOB_BRACE) as $file) {
+        foreach (glob(__DIR__ . '/../../../../../../storage/cache/*.php', GLOB_BRACE) as $file) {
             File::delete($file);
         }
 

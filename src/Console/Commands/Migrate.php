@@ -12,17 +12,17 @@ return new class extends Command {
     public function handle(): void {
         $migrations = [];
 
-        foreach (glob(__DIR__ . '/../../../database/migrations/*.php', GLOB_BRACE) as $file) {
+        foreach (glob(__DIR__ . '/../../../../../../database/migrations/*.php', GLOB_BRACE) as $file) {
             $class = require_once $file;
 
             $migrations[substr(preg_split('~/(?=[^/]*$)~', $file)[1], 0, -4)] = new $class();
         }
 
-        $previousMigratedList = glob(__DIR__ . '/../../../storage/migrations/*', GLOB_BRACE);
+        $previousMigratedList = glob(__DIR__ . '/../../../../../../storage/migrations/*', GLOB_BRACE);
         $nothingToMigrate = true;
 
         foreach ($migrations as $migrationFile => $migration) {
-            $tempFile = __DIR__ . '/../../../storage/migrations/' . $migrationFile;
+            $tempFile = __DIR__ . '/../../../../../../storage/migrations/' . $migrationFile;
 
             if (in_array($tempFile, $previousMigratedList)) {
                 continue;

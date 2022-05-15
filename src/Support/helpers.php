@@ -21,7 +21,7 @@ if (!function_exists('config')) {
     {
         $parts = explode('.', $key);
 
-        $file = __DIR__ . '/../../config/' . $parts[0] . '.php';
+        $file = __DIR__ . '/../../../../../config/' . $parts[0] . '.php';
 
         if (!File::exists($file)) {
             throw new Exception("Configuration file '{$parts[0]}' does not exist");

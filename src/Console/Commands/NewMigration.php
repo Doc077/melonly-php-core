@@ -9,7 +9,7 @@ return new class extends Command {
     }
 
     public function handle(): void {
-        $fileName = __DIR__ . '/../../../database/migrations/'
+        $fileName = __DIR__ . '/../../../../../../database/migrations/'
             . Time::now()->isoFormat('Y_MM_DD_')
             . Time::now()->isoFormat('HHmmss')
             . '_' . $this->arguments[2] . '.php';

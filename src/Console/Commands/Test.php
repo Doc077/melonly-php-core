@@ -10,7 +10,7 @@ return new class extends Command {
     public function handle(): void {
         $this->infoLine('Running tests');
 
-        exec('cd ' . __DIR__ . '/../../..');
+        exec('cd ' . __DIR__ . '/../../../../../..');
         exec('"./vendor/bin/pest"');
     }
 };
