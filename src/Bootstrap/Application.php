@@ -32,7 +32,7 @@ class Application
             ClassRegistrar::registerControllers();
 
             foreach (config('routing.files') as $file) {
-                require_once __DIR__ . '/../../../routing/' . $file . '.php';
+                require_once __DIR__ . '/../../../../../routing/' . $file . '.php';
             }
 
             self::$performance = $timer->stop();

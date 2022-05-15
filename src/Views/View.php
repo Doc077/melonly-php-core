@@ -13,8 +13,8 @@ class View implements ViewInterface
     public static function renderView(string $file, array $variables = [], bool $absolutePath = false, ?string $includePathRoot = null, bool $forceFruityRender = false): void
     {
         if (
-            !File::exists(__DIR__ . '/../../frontend/views/' . $file . '.html') &&
-            !File::exists(__DIR__ . '/../../frontend/views/' . $file . '.html.twig') &&
+            !File::exists(__DIR__ . '/../../../../../frontend/views/' . $file . '.html') &&
+            !File::exists(__DIR__ . '/../../../../../frontend/views/' . $file . '.html.twig') &&
             !File::exists($file)
         ) {
             throw new ViewNotFoundException("View '$file' does not exist");
@@ -29,7 +29,7 @@ class View implements ViewInterface
         switch (config('view.engine')) {
             case Engine::Twig:
                 if (!$absolutePath) {
-                    $file = __DIR__ . '/../../frontend/views/' . $file . '.html.twig';
+                    $file = __DIR__ . '/../../../../../frontend/views/' . $file . '.html.twig';
                 }
 
                 $loader = new ArrayLoader([
@@ -37,7 +37,7 @@ class View implements ViewInterface
                 ]);
 
                 $twig = new Environment($loader, [
-                    'cache' => __DIR__ . '/../../storage/cache',
+                    'cache' => __DIR__ . '/../../../../../storage/cache',
                 ]);
 
                 self::clearBuffer();
@@ -57,7 +57,7 @@ class View implements ViewInterface
     public static function renderWithFruity(string $file, array $variables = [], ?string $includePathRoot = null, bool $absolutePath = false): void
     {
         if (!$absolutePath) {
-            $file = __DIR__ . '/../../frontend/views/' . $file . '.html';
+            $file = __DIR__ . '/../../../../../frontend/views/' . $file . '.html';
         }
 
         self::$currentView = $file;
@@ -81,11 +81,11 @@ class View implements ViewInterface
 
     public static function renderComponent(string $file, array $attributes = []): void
     {
-        if (!File::exists(__DIR__ . '/../../frontend/views/components/' . $file)) {
+        if (!File::exists(__DIR__ . '/../../../../../frontend/views/components/' . $file)) {
             throw new ComponentNotFoundException("Component '$file' does not exist");
         }
 
-        $file = __DIR__ . '/../../frontend/views/components/' . $file;
+        $file = __DIR__ . '/../../../../../frontend/views/components/' . $file;
 
         self::$currentView = $file;
 

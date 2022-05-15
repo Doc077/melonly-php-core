@@ -99,8 +99,8 @@ class Compiler
         /**
          * Get all registered components and compile component tags.
          */
-        if (File::exists(__DIR__ . '/../../frontend/views/components')) {
-            $componentFiles = array_diff(scandir(__DIR__ . '/../../frontend/views/components'), ['.', '..']);
+        if (File::exists(__DIR__ . '/../../../../../frontend/views/components')) {
+            $componentFiles = array_diff(scandir(__DIR__ . '/../../../../../frontend/views/components'), ['.', '..']);
 
             foreach ($componentFiles as $componentFile) {
                 $name = explode('.html', $componentFile)[0];
@@ -142,7 +142,7 @@ class Compiler
          * Generate random file name and save compiled view.
          */
         $filename = random_bytes(16);
-        $filename = __DIR__ . '/../../storage/temp/' . Math::binToHex($filename) . '.html';
+        $filename = __DIR__ . '/../../../../../storage/temp/' . Math::binToHex($filename) . '.html';
 
         File::put($filename, $content);
 
