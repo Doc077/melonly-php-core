@@ -63,7 +63,7 @@ class Connection implements ConnectionInterface
     /**
      * Execute raw SQL query.
      */
-    public function query(string $sql, string $modelClass = Record::class, array $boundParams = []): object|array
+    public function query(string $sql, string $modelClass = Record::class, array $boundParams = []): mixed
     {
         if (!$this->pdo) {
             throw new Exception('Database connection failed. Provide config credentials or check your database');
