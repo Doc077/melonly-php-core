@@ -17,7 +17,9 @@ class Authenticator
             return false;
         }
 
-        $user = DB::query("select * from `users` where `email` = '$email'");
+        $user = config('database.return_single_record')
+            ? DB::query("select * from `users` where `email` = '$email'")
+            : DB::query("select * from `users` where `email` = '$email'")[0];
 
         /**
          * Validate password hash.
