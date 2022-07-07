@@ -113,7 +113,7 @@ class Application
          * Handle CORS.
          */
         if (config('cors.enabled')) {
-            header('Access-Control-Allow-Origin: *' . (config('cors.origins') ?? '*'));
+            header('Access-Control-Allow-Origin: ' . (config('cors.origins') ?? '*'));
             header('Access-Control-Allow-Credentials: true');
             header('Access-Control-Max-Age: 1000');
             header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding');
