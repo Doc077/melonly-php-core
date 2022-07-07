@@ -117,8 +117,10 @@ class Connection implements ConnectionInterface
             /**
              * If the result consists of exactly one element, return it instead of vector.
              */
-            if ($records->length() === 1) {
-                return $records[0];
+            if (config('database.return_single_record')) {
+                if ($records->length() === 1) {
+                    return $records[0];
+                }
             }
 
             return $records;
